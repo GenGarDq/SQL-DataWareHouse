@@ -1,0 +1,215 @@
+[0m16:39:47.395540 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADA590FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADD250680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADD253710>]}
+
+
+============================== 16:39:47.402557 | 260ae268-4c73-4e9b-8a66-e7b7fccef5fe ==============================
+[0m16:39:47.402557 [info ] [MainThread]: Running with dbt=1.11.8
+[0m16:39:47.402557 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt init elt_datawarehouse', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m16:39:47.456020 [debug] [MainThread]: Starter project path: D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\include\starter_project
+[0m16:39:47.501088 [info ] [MainThread]: 
+Your new dbt project "elt_datawarehouse" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m16:39:47.501088 [info ] [MainThread]: Setting up your profile.
+[0m16:40:35.496850 [error] [MainThread]: Encountered an error:
+
+[0m16:40:35.504842 [error] [MainThread]: Traceback (most recent call last):
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\cli\main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\click\termui.py", line 171, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\click\termui.py", line 154, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m16:40:35.509789 [debug] [MainThread]: Command `dbt init` failed at 16:40:35.509789 after 48.67 seconds
+[0m16:40:35.510831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADA590FE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADEDBF9E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001DADD414B00>]}
+[0m16:40:35.513303 [debug] [MainThread]: Flushing usage events
+[0m16:40:36.548669 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:01:54.699530 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C2D6B4FB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C303EB200>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C309D2690>]}
+
+
+============================== 17:01:54.707648 | fb619409-0b06-4c77-b531-b5dd54a796ee ==============================
+[0m17:01:54.707648 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:01:54.708485 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init dbt_dwh', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:01:54.758245 [debug] [MainThread]: Starter project path: D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\include\starter_project
+[0m17:01:54.872241 [info ] [MainThread]: 
+Your new dbt project "dbt_dwh" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:01:54.873271 [info ] [MainThread]: Setting up your profile.
+[0m17:03:08.684071 [info ] [MainThread]: Profile dbt_dwh written to C:\Users\kiril\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:03:08.686074 [debug] [MainThread]: Command `dbt init` succeeded at 17:03:08.686074 after 74.16 seconds
+[0m17:03:08.687078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C30115D30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C30117DA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C2F348F80>]}
+[0m17:03:08.688072 [debug] [MainThread]: Flushing usage events
+[0m17:03:09.717200 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:03:26.204589 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013744804CB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000137479763C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013743F09580>]}
+
+
+============================== 17:03:26.213594 | ebb5e211-b535-4df1-a965-76440976411c ==============================
+[0m17:03:26.213594 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:03:26.214552 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:03:26.260517 [info ] [MainThread]: dbt version: 1.11.8
+[0m17:03:26.261516 [info ] [MainThread]: python version: 3.12.8
+[0m17:03:26.261516 [info ] [MainThread]: python path: D:\pet\SQL-DataWareHouse\venv\Scripts\python.exe
+[0m17:03:26.262479 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m17:03:26.357284 [info ] [MainThread]: Using profiles dir at C:\Users\kiril\.dbt
+[0m17:03:26.358359 [info ] [MainThread]: Using profiles.yml file at C:\Users\kiril\.dbt\profiles.yml
+[0m17:03:26.358990 [info ] [MainThread]: Using dbt_project.yml file at D:\pet\SQL-DataWareHouse\dbt_project.yml
+[0m17:03:26.359583 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m17:03:26.361277 [debug] [MainThread]: Command `dbt debug` failed at 17:03:26.360723 after 0.33 seconds
+[0m17:03:26.361831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013748C21340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013748CB56D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000137470F0830>]}
+[0m17:03:26.362382 [debug] [MainThread]: Flushing usage events
+[0m17:03:27.407954 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:06:33.837302 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028664C37140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000286669DE1E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028666D92C90>]}
+
+
+============================== 17:06:33.846711 | 371f1dc7-22c8-403c-9cd4-4c38f1617153 ==============================
+[0m17:06:33.846711 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:06:33.847714 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:06:33.897168 [info ] [MainThread]: dbt version: 1.11.8
+[0m17:06:33.898265 [info ] [MainThread]: python version: 3.12.8
+[0m17:06:33.899376 [info ] [MainThread]: python path: D:\pet\SQL-DataWareHouse\venv\Scripts\python.exe
+[0m17:06:33.899916 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m17:06:33.998594 [info ] [MainThread]: Using profiles dir at C:\Users\kiril\.dbt
+[0m17:06:33.999716 [info ] [MainThread]: Using profiles.yml file at C:\Users\kiril\.dbt\profiles.yml
+[0m17:06:34.000275 [info ] [MainThread]: Using dbt_project.yml file at D:\pet\SQL-DataWareHouse\dbt_project.yml
+[0m17:06:34.001381 [error] [MainThread]: Encountered an error:
+Internal Error
+  Profile should not be None if loading profile completed
+[0m17:06:34.004059 [debug] [MainThread]: Command `dbt debug` failed at 17:06:34.003524 after 0.34 seconds
+[0m17:06:34.005129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028666F2E6F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000286685F0CB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000286673B2CF0>]}
+[0m17:06:34.006193 [debug] [MainThread]: Flushing usage events
+[0m17:06:39.576102 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:07:32.928412 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F6DD5730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F6DD5760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F6DD57C0>]}
+
+
+============================== 17:07:32.937123 | 2a977b24-5711-47c5-b94f-40617be6f120 ==============================
+[0m17:07:32.937123 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:07:32.938122 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:07:45.472577 [debug] [MainThread]: Starter project path: D:\pet\SQL-DataWareHouse\venv\Lib\site-packages\dbt\include\starter_project
+[0m17:07:45.498126 [info ] [MainThread]: 
+Your new dbt project "dbt_dwh" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m17:07:45.500123 [info ] [MainThread]: Setting up your profile.
+[0m17:08:59.752168 [info ] [MainThread]: Profile dbt_dwh written to C:\Users\kiril\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m17:08:59.754105 [debug] [MainThread]: Command `dbt init` succeeded at 17:08:59.754105 after 86.91 seconds
+[0m17:08:59.754105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F6D09430>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F6C19B20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A1F68040B0>]}
+[0m17:08:59.755105 [debug] [MainThread]: Flushing usage events
+[0m17:09:00.904740 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m17:09:10.305484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B2420D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B5180A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B5008DA0>]}
+
+
+============================== 17:09:10.313523 | 5234c294-89b7-45df-901e-396799eec51a ==============================
+[0m17:09:10.313523 [info ] [MainThread]: Running with dbt=1.11.8
+[0m17:09:10.314490 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\kiril\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m17:09:10.361025 [info ] [MainThread]: dbt version: 1.11.8
+[0m17:09:10.361025 [info ] [MainThread]: python version: 3.12.8
+[0m17:09:10.362662 [info ] [MainThread]: python path: D:\pet\SQL-DataWareHouse\venv\Scripts\python.exe
+[0m17:09:10.363659 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m17:09:10.456861 [info ] [MainThread]: Using profiles dir at C:\Users\kiril\.dbt
+[0m17:09:10.456861 [info ] [MainThread]: Using profiles.yml file at C:\Users\kiril\.dbt\profiles.yml
+[0m17:09:10.457862 [info ] [MainThread]: Using dbt_project.yml file at D:\pet\SQL-DataWareHouse\dbt_project.yml
+[0m17:09:10.459861 [info ] [MainThread]: adapter type: postgres
+[0m17:09:10.460861 [info ] [MainThread]: adapter version: 1.10.0
+[0m17:09:10.460861 [info ] [MainThread]: Configuration:
+[0m17:09:10.461862 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m17:09:10.462863 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m17:09:10.462863 [info ] [MainThread]: Required dependencies:
+[0m17:09:10.463863 [debug] [MainThread]: Executing "git --help"
+[0m17:09:10.627645 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m17:09:10.629645 [debug] [MainThread]: STDERR: "b''"
+[0m17:09:10.630601 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m17:09:10.631599 [info ] [MainThread]: Connection:
+[0m17:09:10.632744 [info ] [MainThread]:   host: localhost
+[0m17:09:10.633647 [info ] [MainThread]:   port: 5432
+[0m17:09:10.634602 [info ] [MainThread]:   user: postgres
+[0m17:09:10.636646 [info ] [MainThread]:   database: DataWareHouse
+[0m17:09:10.637753 [info ] [MainThread]:   schema: public
+[0m17:09:10.639287 [info ] [MainThread]:   connect_timeout: 10
+[0m17:09:10.640297 [info ] [MainThread]:   role: None
+[0m17:09:10.642293 [info ] [MainThread]:   search_path: None
+[0m17:09:10.643295 [info ] [MainThread]:   keepalives_idle: 0
+[0m17:09:10.644295 [info ] [MainThread]:   sslmode: None
+[0m17:09:10.645294 [info ] [MainThread]:   sslcert: None
+[0m17:09:10.646295 [info ] [MainThread]:   sslkey: None
+[0m17:09:10.647292 [info ] [MainThread]:   sslrootcert: None
+[0m17:09:10.649298 [info ] [MainThread]:   application_name: dbt
+[0m17:09:10.650298 [info ] [MainThread]:   retries: 1
+[0m17:09:10.652292 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m17:09:11.300431 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m17:09:14.520181 [debug] [MainThread]: Using postgres connection "debug"
+[0m17:09:14.520181 [debug] [MainThread]: On debug: select 1 as id
+[0m17:09:14.521181 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m17:09:14.561141 [debug] [MainThread]: SQL status: SELECT 1 in 0.041 seconds
+[0m17:09:14.562725 [debug] [MainThread]: On debug: Close
+[0m17:09:14.563724 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m17:09:14.564726 [info ] [MainThread]: [31m1 check failed:[0m
+[0m17:09:14.565730 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <D:\pet\SQL-DataWareHouse\dbt_project.yml> not found
+
+[0m17:09:14.566724 [debug] [MainThread]: Command `dbt debug` failed at 17:09:14.566724 after 4.44 seconds
+[0m17:09:14.567725 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m17:09:14.567725 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B2420D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B6A0B050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001F3B6A0A570>]}
+[0m17:09:14.568723 [debug] [MainThread]: Flushing usage events
+[0m17:09:15.693400 [debug] [MainThread]: An error was encountered while trying to flush usage events

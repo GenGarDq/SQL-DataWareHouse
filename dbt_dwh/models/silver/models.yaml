@@ -1,0 +1,181 @@
+models:
+  - name: crm_cst_info
+    description: очищенная и подготовленная таблица с покупателями
+    docs:
+      show: true
+      node_color: silver
+    
+    columns:
+      - name: cst_id
+        data_type: integer
+        description: id покупателя
+        tests:
+          - not_null
+          - unique
+      
+      - name: cst_key
+        data_type: varchar(50)
+        description: бизнес-ключ покупателя
+      
+      - name: cst_firstname
+        data_type: varchar(50)
+        description: имя покупателя
+        tests:
+          - no_whitespace
+      
+      - name: cst_lastname
+        description: фамилия покупателя
+        data_type: varchar(50)
+        tests:
+          - no_whitespace
+      
+      - name: cst_marital_status
+        description: семейное положение
+        data_type: varchar(10)
+        tests:
+          - no_whitespace
+      
+      - name: cst_gndr
+        description: пол покупателя
+        data_type: varchar(10)
+        tests:
+          - no_whitespace
+      
+      - name: cst_create_date
+        description: дата создания записи
+        data_type: date
+      
+      - name: dwh_load_dttm
+        description: датавремя загрузки в БД
+        data_type: timestamp
+
+  - name: crm_prd_info
+    description: очищенная и подготовленная таблица с товарами
+    docs:
+      show: true
+      node_color: silver
+    
+    columns:
+      - name: prd_id
+        description: id товара
+        data_type: int
+        tests:
+          - unique
+          - not_null
+      
+      - name: cat_id
+        description: id категории товара
+        data_type: char(5)
+      
+      - name: prd_key
+        description: бизнес-ключ товара
+        data_type: varchar(10)
+      
+      - name: prd_nm
+        description: название товара
+        data_type: varchar(50)
+      
+      - name: prd_cost
+        description: стоимость товара
+        data_type: varchar(10)
+      
+      - name: prd_line
+        description: товарный размер
+        data_type: varchar(10)
+        tests:
+          - no_whitespace
+      
+      - name: prd_start_dt
+        description: с какой даты актуальна запись
+      
+      - name: prd_end_dt
+        description: по какую дату актуальна запись
+      
+      - name: dwh_load_dttm
+        description: датавремя загрузки в бд
+
+  - name: crm_sales_details
+    description: очищенная и подготовленная таблица с продажами
+    docs:
+      show: true
+      node_color: silver
+    
+    columns:
+      - name: sls_ord_num
+        description: номер заказа
+        data_type: varchar(50)
+        tests:
+          - not_null
+      
+      - name: sls_prd_key
+        description: бизнес ключ товара
+        data_type: char(50)
+      
+      - name: sls_cust_id
+        description: id покупателя
+        data_type: int
+      
+      - name: sls_order_dt
+        description: дата создания заказа
+        data_type: date
+        constraints:
+          - type: check
+            expression: 'sls_order_dt < sls_ship_dt'
+      
+      - name: sls_ship_dt
+        description: дата отправки заказа
+        data_type: date
+        constraints:
+          - type: check
+            expression: 'sls_ship_dt < sls_due_dt'
+      
+      - name: sls_due_dt
+        description: планируемая дата доставки
+        data_type: date
+      
+      - name: sls_sales
+        description: стоимость заказа
+        constraints:
+          - type: check
+            expression: 'sls_sales > 0'
+      
+      - name: sls_quantity
+        description: количество товара
+      
+      - name: sls_price
+        description: цена товара
+      
+      - name: dwh_load_dttm
+        description: датавремя загрузки в бд
+
+  - name: erp_cust_az12
+    description: таблица с очищенными доп данными о клиентах
+    docs:
+      show: true
+      node_color: silver
+    
+    columns:
+      - name: cst_key
+        description: бизнес ключ клиента
+      
+      - name: bdate
+        description: дата рождения клиента
+        constraints:
+        - type: check
+          expression: 'bdate < current_timestamp'
+      
+      - name: gen
+        description: пол клиента
+
+  - name: erp_loc_a101
+    description: очищенные и стандартизированные дополнительные данные о клиентах (страна проживания)
+    docs:
+      show: true
+      node_color: silver
+    
+    columns:
+      - name: cid
+        description: бизнес ключ клиента
+      
+      - name: cntry
+        description: страна проживания клиента

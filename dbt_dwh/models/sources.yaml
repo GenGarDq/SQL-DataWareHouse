@@ -1,0 +1,131 @@
+sources:
+  - name: bronze
+    description: Сырые данные из csv-файлов crm и erp - систем
+    
+    tables:
+      - name: crm_cst_info
+        description: информация о покупателях
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: cst_id
+            description: id покупателя
+          
+          - name: cst_key
+            description: бизнес-ключ покупателя
+          
+          - name: cst_firstname
+            description: имя покупателя
+          
+          - name: cst_lastname
+            description: фамилия покупателя
+          
+          - name: cst_marital_status
+            description: семейное положение
+          
+          - name: cst_gndr
+            description: пол покупателя
+          
+          - name: cst_create_date
+            description: дата создания записи
+      - name: crm_prd_info
+        description: данные о товарах (products)
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: prd_id
+            description: id товара
+          
+          - name: prd_key
+            description: бизнес-ключ товара (категория + товар)
+          
+          - name: prd_nm
+            description: название товара
+          
+          - name: prd_cost
+            description: стоимость товара
+          
+          - name: prd_line
+            description: товарный размер
+          
+          - name: prd_start_dt
+            description: с какой даты актуальна запись
+          
+          - name: prd_end_dt
+            description: по какую дату актуальна запись
+      - name: crm_sales_details
+        description: таблица продаж
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: sls_ord_num
+            description: порядковый номер
+          
+          - name: sls_prd_key
+            description: ключ продукта
+          
+          - name: sls_cust_id
+            description: id покупателя
+          
+          - name: sls_order_dt
+            description: дата создания заказа (числом)
+          
+          - name: sls_ship_dt
+            description: дата отправки заказа (числом)
+          
+          - name: sls_due_dt
+            description: дата до которой доставят заказ (числом)
+          
+          - name: sls_sales
+            description: число продаж? (хз что за колонка на самом деле)
+          
+          - name: sls_quantity
+            description: количество продаж
+          
+          - name: sls_price
+            description: цена товара
+      - name: erp_cust_az12
+        description: таблица с доп данными о клиентах
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: cid
+            description: бизнес ключ клиента, но с приставкой "NAS"
+          
+          - name: bdate
+            description: дата рождения клиента
+          
+          - name: gen
+            description: пол клиента
+      - name: erp_loc_a101
+        description: ещё данные о клиентах
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: cid
+            description: бизнес ключ клиента, но с дефисом после AW
+          
+          - name: cntry
+            description: страна проживания клиента
+      - name: erp_px_cat_g1v2
+        description: дополнительные данные о товарах
+        docs:
+          show: true
+          node_color: "#CD7F32"
+        columns:
+          - name: id
+            description: первые 5 символов бизнес ключа товара (но вместо - знак _)
+          
+          - name: cat
+            description: категория товара
+          
+          - name: subcat
+            description: подкатегория товара
+          
+          - name: maintenance
+            description: обслуживался или нет

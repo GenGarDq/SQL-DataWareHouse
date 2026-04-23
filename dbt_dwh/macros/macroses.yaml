@@ -1,0 +1,48 @@
+macros:
+  - name: map_case_upper_trim
+    description: >
+      Универсальный макрос для маппинга значений через CASE.
+      Применяет UPPER + TRIM к входной колонке.
+
+    arguments:
+      - name: column
+        type: string
+        description: Имя колонки для преобразования
+
+      - name: mapping_dict
+        type: dict
+        description: Словарь соответствий {код: значение}
+
+      - name: default_value
+        type: string
+        description: Значение по умолчанию
+      
+      - name: output_type
+        type: string
+        description: Тип значения в результате
+
+  - name: int_to_date
+    description: >
+      Макрос для преобразования значений типа int к формату даты типа date
+    arguments:
+      - name: column
+        type: string
+        description: Имя колонки для преобразования
+
+  - name: generate_schema_name
+    description: >
+      Макрос для генерации схем в базе данных без конкатенации с public_
+
+  - name: test_no_whitespace
+    description: >
+      Проверяет, что значения в колонке не содержат пробелов
+      в начале или в конце (leading/trailing whitespace)
+
+    arguments:
+      - name: model
+        type: relation
+        description: Модель, в которой выполняется тест
+
+      - name: column_name
+        type: string
+        description: Имя колонки для проверки

@@ -20,5 +20,6 @@ SELECT
             'UNITED KINGDOM': 'United Kingdom'
         },
         output_type = 'varchar'
-    )}} AS cntry
+    )}} AS cntry,
+    current_timestamp AS dwh_load_dttm
 FROM {{ source('bronze', 'erp_loc_a101') }}

@@ -1,0 +1,142 @@
+models:
+  - name: dim_customers
+    description: >
+      Таблица измерений клиентов
+      Обогащённые данные из CRM и ERP систем
+
+    columns:
+
+      - name: customer_id
+        description: Уникальный идентификатор клиента
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_number
+        description: Бизнес-ключ клиента из CRM
+
+      - name: firstname
+        description: Имя клиента
+        tests:
+          - no_whitespace
+
+      - name: lastname
+        description: Фамилия клиента
+        tests:
+          - no_whitespace
+
+      - name: marital_status
+        description: Семейное положение клиента
+        tests:
+          - no_whitespace
+
+      - name: gender
+        description: Пол клиента (CRM + ERP обогащение)
+        tests:
+          - not_null
+
+      - name: country
+        description: Страна проживания клиента
+
+      - name: birthday_date
+        description: Дата рождения клиента
+        tests:
+          - not_null
+
+      - name: create_date
+        description: Дата создания записи в CRM
+        tests:
+          - not_null
+
+  - name: dim_products
+    description: >
+      Таблица измерений товаров.
+      Содержит обогащённые данные из CRM и ERP систем,
+      включая категории, и актуальную себестоимость.
+
+    columns:
+
+      - name: product_id
+        description: Уникальный идентификатор товара
+        tests:
+          - not_null
+          - unique
+
+      - name: product_number
+        description: Бизнес-ключ товара (естественный ключ из CRM)
+
+      - name: product_name
+        description: Название товара
+        tests:
+          - not_null
+
+      - name: product_cost
+        description: Себестоимость товара (cost from ERP)
+        tests:
+          - not_null
+
+      - name: product_type
+        description: Тип / линейка товара
+
+      - name: category_id
+        description: Идентификатор категории товара
+
+      - name: category
+        description: Категория товара (обогащение из ERP)
+
+      - name: subcategory
+        description: Подкатегория товара (ERP)
+
+      - name: maintenance
+        description: Признак обслуживания / поддержки товара
+  - name: fact_sales
+    description: >
+      Факт таблица продаж.
+      Содержит транзакции заказов клиентов с детализацией по продуктам,
+      количеству, цене и временным атрибутам заказа.
+
+    columns:
+
+      - name: order_number
+        description: Уникальный номер заказа
+
+      - name: product_number
+        description: Бизнес-ключ продукта
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: product_number
+
+      - name: customer_id
+        description: Идентификатор клиента
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: create_order_date
+        description: Дата создания заказа
+        tests:
+          - not_null
+
+      - name: ship_order_date
+        description: Дата отправки заказа
+
+      - name: complete_order_date
+        description: Планируемая дата завершения заказа
+
+      - name: sold_product_revenue
+        description: Выручка за проданный товар
+        tests:
+          - not_null
+
+      - name: sold_product_quantity
+        description: Количество проданных единиц
+        tests:
+          - not_null
+
+      - name: sold_product_price
+        description: Цена продажи единицы товара
+        tests:
+          - not_null

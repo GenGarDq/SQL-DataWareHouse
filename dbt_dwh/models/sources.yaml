@@ -45,10 +45,10 @@ sources:
             description: название товара
           
           - name: prd_cost
-            description: стоимость товара
+            description: закупочная цена товара (себестоимость)
           
           - name: prd_line
-            description: товарный размер
+            description: линейка товаров (для гор, дорог и т.д.)
           
           - name: prd_start_dt
             description: с какой даты актуальна запись

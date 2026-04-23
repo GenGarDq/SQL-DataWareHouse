@@ -11,7 +11,7 @@ macros:
 
       - name: mapping_dict
         type: dict
-        description: Словарь соответствий {код: значение}
+        description: "Словарь соответствий {код: значение}"
 
       - name: default_value
         type: string

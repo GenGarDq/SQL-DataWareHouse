@@ -12,6 +12,16 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 
+def create_script(filename):
+
+    with open(filename, 'r') as file:
+        queries = file.read().split(';')
+    
+    for query in queries:
+        if query.strip():
+            cur.execute(query)
+
+
 def load_script(path, filename, target_table, layer='bronze'):
     full_path = f'{path}/{filename}'
     target = f'{layer}.{target_table}'
@@ -27,6 +37,8 @@ def load_script(path, filename, target_table, layer='bronze'):
 
 path_crm = './datasets/source_crm'
 path_erp = './datasets/source_erp'
+
+create_script('./Scripts/bronze_DDL.sql')
 
 load_script(path_crm, 'cust_info.csv', 'crm_cst_info')
 load_script(path_crm, 'prd_info.csv', 'crm_prd_info')

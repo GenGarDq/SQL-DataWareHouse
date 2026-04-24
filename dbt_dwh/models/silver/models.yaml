@@ -46,7 +46,7 @@ models:
         data_type: date
       
       - name: dwh_load_dttm
-        description: Дата и время загрузки в БД
+        description: Дата и время загрузки записи в DWH 
         data_type: timestamp
 
   - name: crm_prd_info
@@ -92,7 +92,7 @@ models:
         description: По какую дату актуальна запись (SCD2)
       
       - name: dwh_load_dttm
-        description: Дата и время загрузки в бд
+        description: Дата и время загрузки записи в DWH 
 
   - name: crm_sales_details
     description: Очищенная и подготовленная таблица с продажами
@@ -146,7 +146,7 @@ models:
         description: Цена товара
       
       - name: dwh_load_dttm
-        description: Дата и время загрузки в бд
+        description: Дата и время загрузки записи в DWH 
 
   - name: erp_cust_az12
     description: Таблица с очищенными доп данными о клиентах
@@ -168,7 +168,7 @@ models:
         description: Пол клиента
 
       - name: dwh_load_dttm
-        description: Дата и время загрузки в бд
+        description: Дата и время загрузки записи в DWH 
 
   - name: erp_loc_a101
     description: Очищенные и стандартизированные дополнительные данные о клиентах (страна проживания)
@@ -184,4 +184,29 @@ models:
         description: Страна проживания клиента
 
       - name: dwh_load_dttm
-        description: Дата и время загрузки в бд
+        description: Дата и время загрузки записи в DWH 
+
+  - name: erp_px_cat_g1v2
+    description: Очищенная и стандартизированная справочная таблица категорий товаров из ERP системы. 
+    docs:
+      show: true
+      node_color: silver
+
+    columns:
+      - name: id
+        description: Первичный идентификатор категории (бизнес-ключ из ERP)
+        tests:
+          - not_null
+          - unique
+
+      - name: cat
+        description: Основная категория товара
+
+      - name: subcat
+        description: Подкатегория товара
+
+      - name: maintenance
+        description: Признак обслуживания товара 
+
+      - name: dwh_load_dttm
+        description: Дата и время загрузки записи в DWH 

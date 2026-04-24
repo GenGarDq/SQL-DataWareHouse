@@ -7,7 +7,7 @@ sources:
         description: информация о покупателях
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: cst_id
             description: id покупателя
@@ -33,7 +33,7 @@ sources:
         description: данные о товарах (products)
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: prd_id
             description: id товара
@@ -59,7 +59,7 @@ sources:
         description: таблица продаж
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: sls_ord_num
             description: порядковый номер
@@ -91,7 +91,7 @@ sources:
         description: таблица с доп данными о клиентах
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: cid
             description: бизнес ключ клиента, но с приставкой "NAS"
@@ -105,7 +105,7 @@ sources:
         description: ещё данные о клиентах
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: cid
             description: бизнес ключ клиента, но с дефисом после AW
@@ -116,7 +116,7 @@ sources:
         description: дополнительные данные о товарах
         docs:
           show: true
-          node_color: "#CD7F32"
+          node_color: #CD7F32
         columns:
           - name: id
             description: первые 5 символов бизнес ключа товара (но вместо - знак _)
